@@ -1,0 +1,293 @@
+<html>
+<head>
+<title>Table "user"</title>
+<meta content="text/html" http-equiv=Content-Type>
+<link href="style.css" type=text/css rel=stylesheet>
+</head>
+<body  class="PageBody">
+<table  width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td class="DatabaseName"><a href="user table.html"><font  class="DatabaseName">mixandming_db at localhost</font></a></td>
+</tr>
+<tr>
+<td class="PageTitle">Table "user"</td>
+</tr>
+<tr>
+<td height="16px"  align="center"><img align="center" alt="Previous topic" src="Images/prev.gif" border="0">&nbsp;<img align="center" alt="Chapter index" src="Images/chapter.gif" border="0">&nbsp;<img align="center" alt="Next topic" src="Images/next.gif" border="0"></td>
+</tr>
+<tr>
+<td class="HeaderLine" height="1px" ></td>
+</tr>
+</table>
+<br>
+<table  class="ParamTable" width="92%" cellspacing="0" cellpadding="3" border="0">
+<tr>
+<td class="ParamTableCaption" width="30%" >Schema:</td>
+<td class="ParamTableText" width="70%" >public</td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Owner:</td>
+<td class="ParamTableText" width="70%" ><a href="Roles/Role_developer@localhost_developer_16385.html">developer</a></td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >System:</td>
+<td class="ParamTableText" width="70%" ><img alt="" src="Images/no.gif" border="0"></td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Tablespace:</td>
+<td class="ParamTableText" width="70%" >pg_default</td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Inherits From:</td>
+<td class="ParamTableText" width="70%" ><font  class="ParamTableNoValue">(no value)</font></td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Rows:</td>
+<td class="ParamTableText" width="70%" >0</td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Pages:</td>
+<td class="ParamTableText" width="70%" >0</td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Temporary:</td>
+<td class="ParamTableText" width="70%" ><img alt="" src="Images/no.gif" border="0"></td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >With OIDs:</td>
+<td class="ParamTableText" width="70%" ><img alt="" src="Images/no.gif" border="0"></td>
+</tr>
+<tr>
+<td class="ParamTableCaption" width="30%" >Comment:</td>
+<td class="ParamTableText" width="70%" ><textarea  class="Comment" height="60px"  width="100%"  readonly style="{overflow: auto; height: 60px; width: 100%;}">Table is Mix and Ming Users</textarea>
+</td>
+</tr>
+</table>
+<br>
+<font  class="Caption">Fields</font><br>
+<table  class="Table" width="90%" cellspacing="0" cellpadding="5" border="0">
+<th class="TableHeader" width="25%" >Field</th>
+<th class="TableHeader" width="25%" >Data type</th>
+<th class="TableHeader" width="3%" >PK</th>
+<th class="TableHeader" width="3%" >FK</th>
+<th class="TableHeader" width="4%" >Not Null</th>
+<th class="TableHeader" width="10%" >Default</th>
+<th class="TableHeader" width="15%" >Inherits From</th>
+<th class="TableHeader" width="20%" >Comment</th>
+<tr>
+<td class="TableCell">user_id</td>
+<td class="TableCell">integer</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">unique user id</td>
+</tr>
+<tr>
+<td class="TableCell">user_password</td>
+<td class="TableCell">varchar(16)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user password</td>
+</tr>
+<tr>
+<td class="TableCell">user_pw_update_code</td>
+<td class="TableCell">varchar(6)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell">NULL::character varying</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">temporary code for password update</td>
+</tr>
+<tr>
+<td class="TableCell">user_pw_update_time</td>
+<td class="TableCell">timestamp without time zone</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">timestamp password reset code was sent</td>
+</tr>
+<tr>
+<td class="TableCell">usr_firstname</td>
+<td class="TableCell">varchar(30)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user firstname</td>
+</tr>
+<tr>
+<td class="TableCell">usr_lastname</td>
+<td class="TableCell">varchar(30)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user lastname</td>
+</tr>
+<tr>
+<td class="TableCell">usr_addr1</td>
+<td class="TableCell">varchar(50)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user address line 1</td>
+</tr>
+<tr>
+<td class="TableCell">usr_addr2</td>
+<td class="TableCell">varchar(50)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell">NULL::character varying</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user address line 2</td>
+</tr>
+<tr>
+<td class="TableCell">usr_city</td>
+<td class="TableCell">varchar(30)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user city</td>
+</tr>
+<tr>
+<td class="TableCell">usr_state</td>
+<td class="TableCell">varchar(30)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user state/province</td>
+</tr>
+<tr>
+<td class="TableCell">usr_zip</td>
+<td class="TableCell">varchar(10)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user zip/postal code</td>
+</tr>
+<tr>
+<td class="TableCell">usr_country</td>
+<td class="TableCell">varchar(30)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user country</td>
+</tr>
+<tr>
+<td class="TableCell">usr_phone</td>
+<td class="TableCell">varchar(15)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user phone number</td>
+</tr>
+<tr>
+<td class="TableCell">usr_dob</td>
+<td class="TableCell">date</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user date of birth</td>
+</tr>
+<tr>
+<td class="TableCell">usr_tax_doc</td>
+<td class="TableCell">varchar(20)</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">user tax document</td>
+</tr>
+</table>
+<br>
+<font  class="Caption">Indexes</font><br>
+<table  class="Table" width="90%" cellspacing="0" cellpadding="5" border="0">
+<th class="TableHeader" width="25%" >Index</th>
+<th class="TableHeader" width="25%" >Fields</th>
+<th class="TableHeader" width="7%" >Primary</th>
+<th class="TableHeader" width="7%" >Unique</th>
+<th class="TableHeader" width="10%" >Access Method</th>
+<th class="TableHeader" width="10%" >Constraint</th>
+<th class="TableHeader" width="10%" >Function Name</th>
+<th class="TableHeader" width="10%" >Operator Class</th>
+<th class="TableHeader" width="20%" >Comment</th>
+<tr>
+<td class="TableCell">user_pkey</td>
+<td class="TableCell">user_id</td>
+<td class="TableCell" align="center"><img alt="" src="Images/yes.gif" border="0"></td>
+<td class="TableCell" align="center">&nbsp;</td>
+<td class="TableCell">btree</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+<td class="TableCell">&nbsp;</td>
+</tr>
+</table>
+<br>
+<font  class="Caption">Definition:</font><div class="Definition">
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="dbasql1-reservedword">CREATE</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">TABLE</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">public.</span><span class="dbasql1-delimitedidentifier">&quot;user&quot; </span><span class="dbasql1-symbol">(
+</span><span class="dbasql1-space">  user_id              </span><span class="dbasql1-datatype">integer</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  user_password        </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">16</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  user_pw_update_code  </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">6</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">DEFAULT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL::character</span><span class="dbasql1-space"> </span><span class="dbasql1-datatype">varying,
+</span><span class="dbasql1-space">  user_pw_update_time  </span><span class="dbasql1-datatype">timestamp</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">without</span><span class="dbasql1-space"> </span><span class="dbasql1-datatype">time</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">zone,
+</span><span class="dbasql1-space">  usr_firstname        </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">30</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_lastname         </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">30</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_addr1            </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">50</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_addr2            </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">50</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">DEFAULT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL::character</span><span class="dbasql1-space"> </span><span class="dbasql1-datatype">varying,
+</span><span class="dbasql1-space">  usr_city             </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">30</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_state            </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">30</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_zip              </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">10</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_country          </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">30</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_phone            </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">15</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_dob              </span><span class="dbasql1-datatype">date</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  usr_tax_doc          </span><span class="dbasql1-datatype">varchar(</span><span class="dbasql1-number">20</span><span class="dbasql1-symbol">)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NOT</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">NULL,
+</span><span class="dbasql1-space">  </span><span class="dbasql1-comment">/* Keys */
+</span><span class="dbasql1-space">  </span><span class="dbasql1-reservedword">CONSTRAINT</span><span class="dbasql1-space"> user_pkey
+    </span><span class="dbasql1-reservedword">PRIMARY</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">KEY</span><span class="dbasql1-space"> </span><span class="dbasql1-symbol">(</span><span class="dbasql1-identifier">user_id</span><span class="dbasql1-symbol">)
+)</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">WITH</span><span class="dbasql1-space"> </span><span class="dbasql1-symbol">(
+</span><span class="dbasql1-space">    </span><span class="dbasql1-reservedword">OIDS</span><span class="dbasql1-space"> </span><span class="dbasql1-symbol">=</span><span class="dbasql1-space"> </span><span class="dbasql1-reservedword">FALSE
+</span><span class="dbasql1-space">  </span><span class="dbasql1-symbol">);
+</span></span>
+</code></pre>
+</div>
+<br>
+<table  width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td class="HeaderLine" height="1px" ></td>
+</tr>
+<tr>
+<td height="16px"  align="center"><img align="center" alt="Previous topic" src="Images/prev.gif" border="0">&nbsp;<img align="center" alt="Chapter index" src="Images/chapter.gif" border="0">&nbsp;<img align="center" alt="Next topic" src="Images/next.gif" border="0"></td>
+</tr>
+<tr>
+<td><a href="http://www.sqlmaestro.com/products/postgresql/maestro/"><font  class="Copyright">Generated by ""PostgreSQL Maestro"" at 6/30/2018 1:59:41 PM</font></a></td>
+</tr>
+</table>
+</body>
+</html>
