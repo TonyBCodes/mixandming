@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const env = require('dotenv').load();
 const path = require("path");
 //Models
-const models = require("./models");
+const db = require("./models");
 
 const PORT = process.env.PORT || 5000;
 //const PORT = process.env.PORT || 3001;
@@ -31,6 +31,10 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 //});
 
 
+//load passport strategies
+//user strategy
+require("./config/usr_passport.js")(passport, db.User);
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
@@ -41,7 +45,7 @@ app.get("*", function (req, res) {
 });
 
 //Sync Database
-models.sequelize.sync().then(function () {
+db.sequelize.sync().then(function () {
 
     console.log('Nice! Database looks fine')
 
