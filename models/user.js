@@ -19,7 +19,11 @@ module.exports = function (sequelize, Sequelize) {
     user_pw_update_time: {
       type: Sequelize.DATE,
       defaultValue: null
-    },
+      },
+      usr_email: {
+          type: Sequelize.STRING(30),
+          allowNull: false
+      },
     usr_firstname: {
       type: Sequelize.STRING(30),
       allowNull: false

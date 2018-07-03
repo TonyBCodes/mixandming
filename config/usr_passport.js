@@ -1,26 +1,55 @@
 // JavaScript source code
-const bCrypt = require('bcrypt-nodejs');
+//load bcrypt
+var bCrypt = require('bcrypt-nodejs');
+
 
 module.exports = function (passport, user) {
 
-    const User = user;
-    const LocalStrategy = require('passport-local').Strategy;
+    var User = user;
+    var LocalStrategy = require('passport-local').Strategy;
 
-    // serialize
-    passport.serializeUser(function (user, done) {
-        done(null, user.user_id);
-    });
+    passport.use('local-signup', new LocalStrategy(
+        {
+            usernameField: 'email',
+            passwordField: 'password',
+            passReqToCallback: true // allows us to pass back the entire request to the callback
+        },
 
-    // deserialize user 
-    passport.deserializeUser(function (user_id, done) {
-        User.findById(user_id).then(function (user) {
-            if (user) {
-                done(null, user.get());
-            }
-            else {
-                done(user.errors, null);
-            }
-        });
-    });
+        function (req, email, password, done) {
+            var generateHash = function (password) {
+                return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+            };
 
+            User.findOne({
+                where: {
+                    usr_email: email
+                }
+            }).then(function (user) {
+                if (user) {
+                    return done(null, false, {
+                        message: 'That email is already taken'
+                    });
+                }
+                else {
+                    var userPassword = generateHash(password);
+                    var data =
+                        {
+                            email: email,
+                            password: userPassword,
+                            firstname: req.body.firstname,
+                            lastname: req.body.lastname
+                        };
+
+                    User.create(data).then(function (newUser, created) {
+                        if (!newUser) {
+                            return done(null, false);
+                        }
+                        if (newUser) {
+                            return done(null, newUser);
+                        }
+                    });
+                }
+            });
+        }
+    ));
 }
