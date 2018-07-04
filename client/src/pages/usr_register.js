@@ -1,50 +1,94 @@
 // JavaScript source code
 
 import React, { Component } from "react";
-// import API from "../utils/API";
+import usrAPI from "../apis/usr_data_api";
+import PasswordMask from 'react-password-mask';
 
-class usr_Register extends Component {
+class UserRegister extends Component {
     state = {
-        user_password,
-        user_conf_pw,
-        user_pw_update_code:null,
-        user_pw_update_time:"",
-        usr_email,
-        usr_firstname,
-        usr_lastname,
-        usr_addr1,
-        usr_addr2,
-        usr_city,
-        usr_state,
-        usr_zip,
-        usr_country,
-        usr_phone,
-        usr_dob,
-        usr_tax_doc
+        newUser: {
+            user_password: "",
+            user_conf_pw: "",
+            user_pw_update_code: null,
+            user_pw_update_time: "",
+            usr_email: "",
+            usr_firstname: "",
+            usr_lastname: "",
+            usr_addr1: "",
+            usr_addr2: "",
+            usr_city: "",
+            usr_state: "",
+            usr_zip: "",
+            usr_country: "",
+            usr_phone: "",
+            usr_dob: "",
+            usr_tax_doc: ""
+        },
+        message: ""
     }
 
+    datacheck = () => {
+        return true;
+    };
 
+    handleInputChange = event => {
+        const { name, value } = event.target
+        this.setState({
+            [name]: value
+        });
+    };
 
+    handleSubmit = event => {
+        event.preventDefault();
 
+        if (this.datacheck()) {
+            const newUser = {
+                user_password: this.state.user_password,
+                user_pw_update_code: null,
+                user_pw_update_time: null,
+                usr_email: this.state.usr_email,
+                usr_firstname: this.state.usr_firstname,
+                usr_lastname: this.state.usr_lastname,
+                usr_addr1: this.state.usr_addr1,
+                usr_addr2: this.state.usr_addr2,
+                usr_city: this.state.usr_city,
+                usr_state: this.state.usr_state,
+                usr_zip: this.state.usr_zip,
+                usr_country: this.state.usr_country,
+                usr_phone: this.state.usr_phone,
+                usr_dob: this.state.usr_dob,
+                usr_tax_doc: this.state.usr_tax_doc
+            }
+            usrAPI.registerUser(newUser);
+        }
+
+        else {
+            this.message = "Please correct information";
+        }
+    }
+            
     render() {
         return (
             <div className="container-fluid pad-lg-0">
                 <div className="row">
-                    <form action="/register" method="post">
+                    <form>
                         <div className="form-group">
                             <label htmlFor="UserPassword">Set Password</label>
-                            <input type="password" className="form-control" id="usrpassword" placeholder="Password" name="password" value={this.state.user_password} onChange={this.handleInputChange} />
+                            //<input type="password" className="form-control" id="usrpassword" placeholder="Password" name="user_password" value={this.state.user_password} onChange={this.handleInputChange} />
+                            <small id="passwordHelpBlock" className="form-text text-muted">
+                                Your password must be 8-16 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                            </small>
                         </div>
                         <div className="form-group">
                             <label htmlFor="UserConfPassword">Confirm Password</label>
-                            <input type="password" className="form-control" id="userconfpw" placeholder="Confirm Password" name="confpassword" value={this.state.user_conf_pw} onChange={this.handleInputChange} />
+                            <input type="password" className="form-control" id="userconfpw" placeholder="Confirm Password" name="user_conf_pw" value={this.state.user_conf_pw} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="UserEmail">Email</label>
-                            <input type="email" className="form-control" id="useremail" placeholder="Email" name="useremail" value={this.state.usr_email} onChange={this.handleInputChange} />
+                            <input type="email" className="form-control" id="useremail" placeholder="Email" name="usr_email" value={this.state.usr_email} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="FirstName">Password</label>
+                            <label htmlFor="FirstName">First Name</label>
                             <input type="text" className="form-control" id="firstname" placeholder="First Name" name="usr_firstname" value={this.state.usr_firstname} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
@@ -81,13 +125,13 @@ class usr_Register extends Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="DateOfBirth">Date of Birth</label>
-                            <input type="text" className="form-control" id="dateofbirth" placeholder="Date of Birth" name="usr_dod" value={this.state.usr_dob} onChange={this.handleInputChange} />
+                            <input type="date" className="form-control" id="dateofbirth" placeholder="Date of Birth" name="usr_dob" value={this.state.usr_dob} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="TaxDoc">Nation Tax ID Number</label>
-                            <input type="text" className="form-control" id="taxdoc" placeholder="Tax Document Number" name="usr_tax_doc" value={this.state.usr_tax_doc} onChange={this.handleInputChange} />
+                            <label htmlFor="TaxDoc">National Tax ID Number</label>
+                            <input type="text" className="form-control" id="taxdoc" placeholder="Tax ID Number" name="usr_tax_doc" value={this.state.usr_tax_doc} onChange={this.handleInputChange} />
                         </div>
-                        <button type="submit" className="btn btn-primary" onClick={this.registerUser}>Create User Account</button>
+                        <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Create User Account</button>
                     </form>
                     <div>
                         <h4>Already have an account? <a href="/login">Log in here.</a></h4>
@@ -97,15 +141,12 @@ class usr_Register extends Component {
         );
     }
 }
-export default Register;
+export default UserRegister;
+
+//pad-lg-0
 
 
-    //    handleInputChange = event => {
-//        const { name, value } = event.target
-//        this.setState({
-//            [name]: value
-//        });
-//    };
+
 
 //    handleSubmit = event => {
 //        event.preventDefault();
@@ -121,3 +162,16 @@ export default Register;
 //                .catch(err => console.log(err));
 //        };
 //    };
+
+//action="/register" method="post"
+//<input type="password" className="form-control" id="usrpassword" placeholder="Password" name="user_password" value={this.state.user_password} onChange={this.handleInputChange} />
+//<input type="password" className="form-control" id="userconfpw" placeholder="Confirm Password" name="user_conf_pw" value={this.state.user_conf_pw} onChange={this.handleInputChange} />
+
+
+    //        }).then(res => {
+    //            console.log(res);
+    //            this.props.history.push("/");
+    //        })
+    //            .catch(err => console.log(err));
+    //    };
+    //};

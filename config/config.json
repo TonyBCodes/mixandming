@@ -4,7 +4,7 @@
 
     "username": "developer",
 
-    "password": "DevDev1",
+    "password": "mixdev01",
 
     "database": "mixandming_db",
 
@@ -24,7 +24,7 @@
 
     "host": "",
 
-    "dialect": "mysql"
+    "dialect": "postgres"
 
   },
 
@@ -38,7 +38,7 @@
 
     "host": "127.0.0.1",
 
-    "dialect": "mysql"
+    "dialect": "postgres"
 
   }
 

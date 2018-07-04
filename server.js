@@ -44,6 +44,14 @@ app.get("*", function (req, res) {
     //res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+//require("./routes/apiRoutes")(app, passport);
+//require("./routes/auth")(app, passport);
+
+// Add routes, both API and view
+const routes = require("./routes/auth-api");
+app.use(routes);
+
+
 //Sync Database
 db.sequelize.sync().then(function () {
 
